@@ -1,4 +1,4 @@
-API
+Orchestrator
 ===
 
 .. automodule:: orc.orchestrator
