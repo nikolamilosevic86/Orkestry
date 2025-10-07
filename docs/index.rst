@@ -16,8 +16,9 @@ documentation for details.
    :caption: Contents:
 
 
-.. automodule:: orc.orchestrator
+.. automodule:: mypkg
 :members:
+api
 :undoc-members:
 :show-inheritance:
 
