@@ -16,9 +16,9 @@ documentation for details.
    :caption: Contents:
 
 
-.. automodule:: mypkg
-:members:
-api
-:undoc-members:
-:show-inheritance:
+.. autosummary::
+   :toctree: generated
+   :recursive:
+
+   orc.orchestrator
 
