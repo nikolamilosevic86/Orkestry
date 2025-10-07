@@ -6,6 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+# Project def
 project = 'Orkestry'
 copyright = '2025, Nikola Milosevic'
 author = 'Nikola Milosevic'
