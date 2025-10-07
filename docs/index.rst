@@ -15,3 +15,8 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
+.. automodule:: mypkg
+:members:
+:undoc-members:
+:show-inheritance:
+
