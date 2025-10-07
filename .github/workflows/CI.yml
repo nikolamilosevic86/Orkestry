@@ -18,5 +18,5 @@ jobs:
         if: hashFiles('requirements.txt') != ''
         run: pip install -r requirements.txt
 
-      - name: Run unit tests
-        run: python -m unittest -v
+      - name: Run unit tests (discover)
+        run: python -m unittest discover -s tests -p "test_*.py" -v
