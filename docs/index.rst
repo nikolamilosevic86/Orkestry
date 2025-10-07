@@ -14,9 +14,9 @@ documentation for details.
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
- api
 
-.. automodule:: mypkg
+
+.. automodule:: orc.orchestrator
 :members:
 :undoc-members:
 :show-inheritance:
