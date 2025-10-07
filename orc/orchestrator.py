@@ -3,6 +3,6 @@
 def print_version():
     """
     Print version of the package
-    :return:
+    :return: version
     """
     return "Orkestry version 0.1"
