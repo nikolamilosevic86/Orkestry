@@ -11,6 +11,8 @@ Add your content using ``reStructuredText`` syntax. See the
 documentation for details.
 
 
+Orchestry is a
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
