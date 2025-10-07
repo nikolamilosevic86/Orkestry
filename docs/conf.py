@@ -8,7 +8,7 @@
 import os, sys;
 
 sys.path.insert(0, os.path.abspath('..'))
-# Project def
+# Project definition
 project = 'Orkestry'
 copyright = '2025, Nikola Milosevic'
 author = 'Nikola Milosevic'
