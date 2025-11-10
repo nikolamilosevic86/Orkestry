@@ -6,3 +6,5 @@ API
    :recursive:
 
    orc.orchestrator
+   server
+   
