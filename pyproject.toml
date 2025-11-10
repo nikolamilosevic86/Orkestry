@@ -120,7 +120,8 @@ show_error_codes = true
 plugins = []
 
 # Package-level mypy options
-[mypy-orc.*]
+[[tool.mypy.overrides]]
+module = "orc.*"
 ignore_missing_imports = true
 
 # -------------------------------

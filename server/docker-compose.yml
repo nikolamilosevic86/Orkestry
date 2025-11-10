@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: orkestry_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-orkestry_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme_secure_password}
+      POSTGRES_DB: ${POSTGRES_DB:-orkestry}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    networks:
+      - orkestry_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-orkestry_user}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: orkestry_qdrant
+    volumes:
+      - qdrant_data:/qdrant/storage
+    ports:
+      - "${QDRANT_PORT:-6333}:6333"
+      - "6334:6334"
+    networks:
+      - orkestry_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  orkestry:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: orkestry_server
+    ports:
+      - "${SERVER_PORT:-8000}:8000"
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-orkestry_user}:${POSTGRES_PASSWORD:-changeme_secure_password}@postgres:5432/${POSTGRES_DB:-orkestry}
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - AUTO_SETUP_DOCKER=false
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-changeme_admin_password}
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@orkestry.local}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-cross-encoder/ms-marco-MiniLM-L-6-v2}
+      - EMBEDDING_DEVICE=${EMBEDDING_DEVICE:-cpu}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+    networks:
+      - orkestry_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  orkestry_network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  qdrant_data:
+    driver: local
