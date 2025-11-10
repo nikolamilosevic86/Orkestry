@@ -9,9 +9,11 @@ import os
 import sys
 from unittest.mock import MagicMock
 
-# Add parent directory to path to import modules
-sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(0, os.path.abspath('../server'))
+# Get the absolute path to the project root
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+# Add project root to path - this allows importing server as a package
+sys.path.insert(0, project_root)
 
 # Mock imports for modules that require heavy dependencies
 class Mock(MagicMock):
@@ -21,6 +23,7 @@ class Mock(MagicMock):
 
 MOCK_MODULES = [
     'qdrant_client',
+    'qdrant_client.models',
     'sentence_transformers',
     'torch',
     'docker',

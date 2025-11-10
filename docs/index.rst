@@ -86,3 +86,21 @@ Core Orchestration
 
    orc.orchestrator
 
+Server Modules
+--------------
+
+The server package provides the FastAPI-based MCP Registry Server implementation.
+
+.. autosummary::
+   :toctree: generated
+   :recursive:
+
+   server.server
+   server.auth
+   server.config
+   server.database
+   server.docker_setup
+   server.models
+   server.schemas
+   server.vector_store
+
