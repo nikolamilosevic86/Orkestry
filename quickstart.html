@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start Guide &mdash; Orkestry 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Orkestry Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Orkestry
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#first-steps">First Steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#login">Login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#register-an-mcp-server">Register an MCP Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search-for-mcp-servers">Search for MCP Servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#view-api-documentation">View API Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-auto-setup">Docker Auto-Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/orc.orchestrator.html">orc.orchestrator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/orc.orchestrator.html#orc.orchestrator.print_version"><code class="docutils literal notranslate"><span class="pre">print_version()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#core-modules">Core Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/orc.orchestrator.html">orc.orchestrator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/orc.orchestrator.html#orc.orchestrator.print_version"><code class="docutils literal notranslate"><span class="pre">print_version()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#server-modules">Server Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.server.html">server.server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.auth.html">server.auth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.config.html">server.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.database.html">server.database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.docker_setup.html">server.docker_setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="generated/server.docker_setup.html#server.docker_setup.DockerSetup"><code class="docutils literal notranslate"><span class="pre">DockerSetup</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.models.html">server.models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.schemas.html">server.schemas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.vector_store.html">server.vector_store</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules.html#additional-documentation">Additional Documentation</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generated/orc.orchestrator.html">orc.orchestrator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/orc.orchestrator.html#orc.orchestrator.print_version"><code class="docutils literal notranslate"><span class="pre">print_version()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="generated/server.docker_setup.html">server.docker_setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/server.docker_setup.html#server.docker_setup.DockerSetup"><code class="docutils literal notranslate"><span class="pre">DockerSetup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.docker_setup.html#server.docker_setup.DockerSetup.__init__"><code class="docutils literal notranslate"><span class="pre">DockerSetup.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.docker_setup.html#server.docker_setup.DockerSetup.setup_postgres"><code class="docutils literal notranslate"><span class="pre">DockerSetup.setup_postgres()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.docker_setup.html#server.docker_setup.DockerSetup.setup_qdrant"><code class="docutils literal notranslate"><span class="pre">DockerSetup.setup_qdrant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.docker_setup.html#server.docker_setup.DockerSetup.setup_all"><code class="docutils literal notranslate"><span class="pre">DockerSetup.setup_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.docker_setup.html#server.docker_setup.DockerSetup.stop_all"><code class="docutils literal notranslate"><span class="pre">DockerSetup.stop_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/server.docker_setup.html#server.docker_setup.DockerSetup.remove_all"><code class="docutils literal notranslate"><span class="pre">DockerSetup.remove_all()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Orkestry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quick Start Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/quickstart.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-start-guide">
+<h1>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading"></a></h1>
+<p>This guide will help you get started with Orkestry MCP Registry Server.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Python 3.11 or higher</p></li>
+<li><p>Docker and Docker Compose (optional, for automatic setup)</p></li>
+<li><p>Git</p></li>
+</ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>Clone the repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">nikolamilosevic86</span><span class="o">/</span><span class="n">Orkestry</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">Orkestry</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create and activate virtual environment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span>
+<span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>  <span class="c1"># On Windows: venv\Scripts\activate</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install dependencies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</li>
+<li><p>Configure the server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">server</span>
+<span class="n">cp</span> <span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">example</span> <span class="o">.</span><span class="n">env</span>
+<span class="c1"># Edit .env with your configuration (or use defaults for development)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Start the server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">..</span>
+<span class="n">python</span> <span class="n">server</span><span class="o">/</span><span class="n">run</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+<li><p>Verify installation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8000</span><span class="o">/</span><span class="n">health</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="first-steps">
+<h2>First Steps<a class="headerlink" href="#first-steps" title="Link to this heading"></a></h2>
+<section id="login">
+<h3>Login<a class="headerlink" href="#login" title="Link to this heading"></a></h3>
+<p>Get an access token:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;http://localhost:8000/auth/login&quot;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> \
+  <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{&quot;username&quot;:&quot;admin&quot;,&quot;password&quot;:&quot;changeme_admin_password&quot;}&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="register-an-mcp-server">
+<h3>Register an MCP Server<a class="headerlink" href="#register-an-mcp-server" title="Link to this heading"></a></h3>
+<p>Register your first MCP server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;http://localhost:8000/mcp/register&quot;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: Bearer YOUR_TOKEN&quot;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> \
+  <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;weather-service&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Provides weather forecasts and current conditions&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;endpoint_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://api.weather.com/mcp&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;config&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;capabilities&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;forecast&quot;</span><span class="p">,</span> <span class="s2">&quot;current&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;weather&quot;</span><span class="p">,</span> <span class="s2">&quot;climate&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="search-for-mcp-servers">
+<h3>Search for MCP Servers<a class="headerlink" href="#search-for-mcp-servers" title="Link to this heading"></a></h3>
+<p>Find relevant MCP servers using semantic search:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="n">POST</span> <span class="s2">&quot;http://localhost:8000/mcp/search&quot;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: Bearer YOUR_TOKEN&quot;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Content-Type: application/json&quot;</span> \
+  <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{</span>
+    <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="s2">&quot;I need current weather information&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;limit&quot;</span><span class="p">:</span> <span class="mi">5</span>
+  <span class="p">}</span><span class="s1">&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="view-api-documentation">
+<h3>View API Documentation<a class="headerlink" href="#view-api-documentation" title="Link to this heading"></a></h3>
+<p>Access the interactive API documentation at:</p>
+<ul class="simple">
+<li><p>Swagger UI: <a class="reference external" href="http://localhost:8000/docs">http://localhost:8000/docs</a></p></li>
+<li><p>ReDoc: <a class="reference external" href="http://localhost:8000/redoc">http://localhost:8000/redoc</a></p></li>
+</ul>
+</section>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<section id="environment-variables">
+<h3>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading"></a></h3>
+<p>All configuration is managed via the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file:</p>
+<p>Database Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POSTGRES_HOST</span><span class="o">=</span><span class="n">localhost</span>
+<span class="n">POSTGRES_PORT</span><span class="o">=</span><span class="mi">5432</span>
+<span class="n">POSTGRES_DB</span><span class="o">=</span><span class="n">orkestry</span>
+<span class="n">POSTGRES_USER</span><span class="o">=</span><span class="n">orkestry_user</span>
+<span class="n">POSTGRES_PASSWORD</span><span class="o">=</span><span class="n">changeme_secure_password</span>
+</pre></div>
+</div>
+<p>Qdrant Configuration:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">QDRANT_HOST</span><span class="o">=</span><span class="n">localhost</span>
+<span class="n">QDRANT_PORT</span><span class="o">=</span><span class="mi">6333</span>
+<span class="n">QDRANT_COLLECTION_NAME</span><span class="o">=</span><span class="n">mcp_servers</span>
+</pre></div>
+</div>
+<p>Embedding Model:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EMBEDDING_MODEL</span><span class="o">=</span><span class="n">sentence</span><span class="o">-</span><span class="n">transformers</span><span class="o">/</span><span class="nb">all</span><span class="o">-</span><span class="n">MiniLM</span><span class="o">-</span><span class="n">L6</span><span class="o">-</span><span class="n">v2</span>
+<span class="n">EMBEDDING_DIMENSION</span><span class="o">=</span><span class="mi">384</span>
+<span class="n">EMBEDDING_DEVICE</span><span class="o">=</span><span class="n">cpu</span>
+</pre></div>
+</div>
+<p>Authentication:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">JWT_SECRET_KEY</span><span class="o">=</span><span class="n">your</span><span class="o">-</span><span class="nb">super</span><span class="o">-</span><span class="n">secret</span><span class="o">-</span><span class="n">jwt</span><span class="o">-</span><span class="n">key</span><span class="o">-</span><span class="n">change</span><span class="o">-</span><span class="n">this</span><span class="o">-</span><span class="ow">in</span><span class="o">-</span><span class="n">production</span>
+<span class="n">ADMIN_USERNAME</span><span class="o">=</span><span class="n">admin</span>
+<span class="n">ADMIN_PASSWORD</span><span class="o">=</span><span class="n">changeme_admin_password</span>
+</pre></div>
+</div>
+</section>
+<section id="docker-auto-setup">
+<h3>Docker Auto-Setup<a class="headerlink" href="#docker-auto-setup" title="Link to this heading"></a></h3>
+<p>Set <code class="docutils literal notranslate"><span class="pre">AUTO_SETUP_DOCKER=true</span></code> to automatically install and start PostgreSQL and Qdrant via Docker.</p>
+</section>
+</section>
+<section id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Link to this heading"></a></h2>
+<p>Run the test suite:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pytest</span> <span class="n">pytest</span><span class="o">-</span><span class="n">asyncio</span> <span class="n">pytest</span><span class="o">-</span><span class="n">cov</span> <span class="n">faker</span>
+<span class="n">pytest</span> <span class="n">server</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span> <span class="o">-</span><span class="n">v</span>
+</pre></div>
+</div>
+<p>Run with coverage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="n">server</span><span class="o">/</span><span class="n">tests</span><span class="o">/</span> <span class="o">-</span><span class="n">v</span> <span class="o">--</span><span class="n">cov</span><span class="o">=</span><span class="n">server</span> <span class="o">--</span><span class="n">cov</span><span class="o">-</span><span class="n">report</span><span class="o">=</span><span class="n">html</span>
+</pre></div>
+</div>
+</section>
+<section id="security">
+<h2>Security<a class="headerlink" href="#security" title="Link to this heading"></a></h2>
+<p>Before deploying to production:</p>
+<ol class="arabic simple">
+<li><p>Change all default passwords</p></li>
+<li><p>Generate a secure JWT secret key</p></li>
+<li><p>Configure HTTPS/SSL</p></li>
+<li><p>Set up proper CORS origins</p></li>
+<li><p>Review rate limiting settings</p></li>
+</ol>
+<p>See the <a class="reference internal" href="api.html"><span class="doc">API</span></a> section for detailed security best practices.</p>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Read the full <a class="reference internal" href="api.html"><span class="doc">API</span></a> documentation</p></li>
+<li><p>Explore the API endpoints at <a class="reference external" href="http://localhost:8000/docs">http://localhost:8000/docs</a></p></li>
+<li><p>Review the security checklist in server/README.md</p></li>
+<li><p>Join the community discussions on GitHub</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Orkestry Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Nikola Milosevic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>server.docker_setup &mdash; Orkestry 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Orkestry
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quick Start Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#first-steps">First Steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#login">Login</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#register-an-mcp-server">Register an MCP Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#search-for-mcp-servers">Search for MCP Servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#view-api-documentation">View API Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#environment-variables">Environment Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../quickstart.html#docker-auto-setup">Docker Auto-Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#security">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/orc.orchestrator.html">orc.orchestrator</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/orc.orchestrator.html#orc.orchestrator.print_version"><code class="docutils literal notranslate"><span class="pre">print_version()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Modules Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modules.html#core-modules">Core Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/orc.orchestrator.html">orc.orchestrator</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../generated/orc.orchestrator.html#orc.orchestrator.print_version"><code class="docutils literal notranslate"><span class="pre">print_version()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules.html#server-modules">Server Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.server.html">server.server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.auth.html">server.auth</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.config.html">server.config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.database.html">server.database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.docker_setup.html">server.docker_setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup"><code class="docutils literal notranslate"><span class="pre">DockerSetup</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.models.html">server.models</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.schemas.html">server.schemas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.vector_store.html">server.vector_store</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules.html#additional-documentation">Additional Documentation</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/orc.orchestrator.html">orc.orchestrator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/orc.orchestrator.html#orc.orchestrator.print_version"><code class="docutils literal notranslate"><span class="pre">print_version()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../generated/server.docker_setup.html">server.docker_setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup"><code class="docutils literal notranslate"><span class="pre">DockerSetup</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.__init__"><code class="docutils literal notranslate"><span class="pre">DockerSetup.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.setup_postgres"><code class="docutils literal notranslate"><span class="pre">DockerSetup.setup_postgres()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.setup_qdrant"><code class="docutils literal notranslate"><span class="pre">DockerSetup.setup_qdrant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.setup_all"><code class="docutils literal notranslate"><span class="pre">DockerSetup.setup_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.stop_all"><code class="docutils literal notranslate"><span class="pre">DockerSetup.stop_all()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.remove_all"><code class="docutils literal notranslate"><span class="pre">DockerSetup.remove_all()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Orkestry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">server.docker_setup</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for server.docker_setup</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Docker setup utilities for PostgreSQL and Qdrant.</span>
+
+<span class="sd">This module handles automatic installation and configuration of required</span>
+<span class="sd">services using Docker.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">docker</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">docker.errors</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIError</span><span class="p">,</span> <span class="n">DockerException</span><span class="p">,</span> <span class="n">ImageNotFound</span><span class="p">,</span> <span class="n">NotFound</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="DockerSetup">
+<a class="viewcode-back" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DockerSetup</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Manages Docker containers for Orkestry dependencies.</span>
+<span class="sd">    </span>
+<span class="sd">    Handles automatic setup and configuration of PostgreSQL and Qdrant</span>
+<span class="sd">    containers based on environment configuration.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="DockerSetup.__init__">
+<a class="viewcode-back" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">postgres_config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+        <span class="n">qdrant_config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
+        <span class="n">network_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;orkestry_network&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize Docker setup manager.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            postgres_config: PostgreSQL configuration (host, port, user, password, db)</span>
+<span class="sd">            qdrant_config: Qdrant configuration (host, port)</span>
+<span class="sd">            network_name: Docker network name for container communication</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">postgres_config</span> <span class="o">=</span> <span class="n">postgres_config</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qdrant_config</span> <span class="o">=</span> <span class="n">qdrant_config</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">network_name</span> <span class="o">=</span> <span class="n">network_name</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">docker</span><span class="o">.</span><span class="n">from_env</span><span class="p">()</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Docker client initialized successfully&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">DockerException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to initialize Docker client: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">raise</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_ensure_network</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create Docker network if it doesn&#39;t exist.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">networks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network_name</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Docker network &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">network_name</span><span class="si">}</span><span class="s2">&#39; already exists&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">NotFound</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating Docker network &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">network_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">networks</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">network_name</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;bridge&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_container_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">container_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if a container exists.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            container_name: Name of the container</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            True if container exists, False otherwise</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">container_name</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="n">NotFound</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_container_is_running</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">container_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if a container is running.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            container_name: Name of the container</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            True if container is running, False otherwise</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">container_name</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">container</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;running&quot;</span>
+        <span class="k">except</span> <span class="n">NotFound</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="DockerSetup.setup_postgres">
+<a class="viewcode-back" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.setup_postgres">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setup_postgres</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setup PostgreSQL container.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple of (success: bool, error_message: Optional[str])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">container_name</span> <span class="o">=</span> <span class="s2">&quot;orkestry_postgres&quot;</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Check if container already exists</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container_exists</span><span class="p">(</span><span class="n">container_name</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container_is_running</span><span class="p">(</span><span class="n">container_name</span><span class="p">):</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PostgreSQL container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39; is already running&quot;</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting existing PostgreSQL container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+                    <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">container_name</span><span class="p">)</span>
+                    <span class="n">container</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Wait for startup</span>
+                    <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span>
+            
+            <span class="c1"># Create network if needed</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_network</span><span class="p">()</span>
+            
+            <span class="c1"># Create and start new container</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating PostgreSQL container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+                <span class="s2">&quot;postgres:16-alpine&quot;</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">container_name</span><span class="p">,</span>
+                <span class="n">environment</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">&quot;POSTGRES_USER&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">postgres_config</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;POSTGRES_PASSWORD&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">postgres_config</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;POSTGRES_DB&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">postgres_config</span><span class="p">[</span><span class="s2">&quot;db&quot;</span><span class="p">],</span>
+                <span class="p">},</span>
+                <span class="n">ports</span><span class="o">=</span><span class="p">{</span><span class="sa">f</span><span class="s2">&quot;5432/tcp&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">postgres_config</span><span class="p">[</span><span class="s2">&quot;port&quot;</span><span class="p">]},</span>
+                <span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">network_name</span><span class="p">,</span>
+                <span class="n">detach</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">restart_policy</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;unless-stopped&quot;</span><span class="p">},</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Wait for PostgreSQL to be ready</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Waiting for PostgreSQL to be ready...&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+            
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PostgreSQL container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39; started successfully&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span>
+            
+        <span class="k">except</span> <span class="n">ImageNotFound</span><span class="p">:</span>
+            <span class="n">error_msg</span> <span class="o">=</span> <span class="s2">&quot;PostgreSQL Docker image not found. Pulling...&quot;</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">pull</span><span class="p">(</span><span class="s2">&quot;postgres:16-alpine&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup_postgres</span><span class="p">()</span>  <span class="c1"># Retry after pulling</span>
+            <span class="k">except</span> <span class="n">APIError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Failed to pull PostgreSQL image: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">error_msg</span>
+                
+        <span class="k">except</span> <span class="n">APIError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Docker API error setting up PostgreSQL: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">error_msg</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Unexpected error setting up PostgreSQL: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">error_msg</span></div>
+
+
+<div class="viewcode-block" id="DockerSetup.setup_qdrant">
+<a class="viewcode-back" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.setup_qdrant">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setup_qdrant</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setup Qdrant container.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple of (success: bool, error_message: Optional[str])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">container_name</span> <span class="o">=</span> <span class="s2">&quot;orkestry_qdrant&quot;</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Check if container already exists</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container_exists</span><span class="p">(</span><span class="n">container_name</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container_is_running</span><span class="p">(</span><span class="n">container_name</span><span class="p">):</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Qdrant container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39; is already running&quot;</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Starting existing Qdrant container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+                    <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">container_name</span><span class="p">)</span>
+                    <span class="n">container</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+                    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Wait for startup</span>
+                    <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span>
+            
+            <span class="c1"># Create network if needed</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_network</span><span class="p">()</span>
+            
+            <span class="c1"># Create and start new container</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Creating Qdrant container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+                <span class="s2">&quot;qdrant/qdrant:latest&quot;</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">container_name</span><span class="p">,</span>
+                <span class="n">ports</span><span class="o">=</span><span class="p">{</span>
+                    <span class="sa">f</span><span class="s2">&quot;6333/tcp&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">qdrant_config</span><span class="p">[</span><span class="s2">&quot;port&quot;</span><span class="p">],</span>
+                    <span class="sa">f</span><span class="s2">&quot;6334/tcp&quot;</span><span class="p">:</span> <span class="mi">6334</span><span class="p">,</span>  <span class="c1"># gRPC port</span>
+                <span class="p">},</span>
+                <span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">network_name</span><span class="p">,</span>
+                <span class="n">detach</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">restart_policy</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;unless-stopped&quot;</span><span class="p">},</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Wait for Qdrant to be ready</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Waiting for Qdrant to be ready...&quot;</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Qdrant container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39; started successfully&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">None</span>
+            
+        <span class="k">except</span> <span class="n">ImageNotFound</span><span class="p">:</span>
+            <span class="n">error_msg</span> <span class="o">=</span> <span class="s2">&quot;Qdrant Docker image not found. Pulling...&quot;</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">images</span><span class="o">.</span><span class="n">pull</span><span class="p">(</span><span class="s2">&quot;qdrant/qdrant:latest&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup_qdrant</span><span class="p">()</span>  <span class="c1"># Retry after pulling</span>
+            <span class="k">except</span> <span class="n">APIError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Failed to pull Qdrant image: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">error_msg</span>
+                
+        <span class="k">except</span> <span class="n">APIError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Docker API error setting up Qdrant: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">error_msg</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">error_msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Unexpected error setting up Qdrant: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">error_msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="n">error_msg</span></div>
+
+
+<div class="viewcode-block" id="DockerSetup.setup_all">
+<a class="viewcode-back" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.setup_all">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setup_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Setup all required Docker containers.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple of (all_success: bool, error_messages: list[str])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Setup PostgreSQL</span>
+        <span class="n">postgres_success</span><span class="p">,</span> <span class="n">postgres_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup_postgres</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">postgres_success</span> <span class="ow">and</span> <span class="n">postgres_error</span><span class="p">:</span>
+            <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PostgreSQL: </span><span class="si">{</span><span class="n">postgres_error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Setup Qdrant</span>
+        <span class="n">qdrant_success</span><span class="p">,</span> <span class="n">qdrant_error</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup_qdrant</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">qdrant_success</span> <span class="ow">and</span> <span class="n">qdrant_error</span><span class="p">:</span>
+            <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Qdrant: </span><span class="si">{</span><span class="n">qdrant_error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">all_success</span> <span class="o">=</span> <span class="n">postgres_success</span> <span class="ow">and</span> <span class="n">qdrant_success</span>
+        
+        <span class="k">if</span> <span class="n">all_success</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;All Docker containers setup successfully&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Docker setup completed with errors: </span><span class="si">{</span><span class="n">errors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">all_success</span><span class="p">,</span> <span class="n">errors</span></div>
+
+
+<div class="viewcode-block" id="DockerSetup.stop_all">
+<a class="viewcode-back" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.stop_all">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stop_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Stop all Orkestry Docker containers.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">container_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;orkestry_postgres&quot;</span><span class="p">,</span> <span class="s2">&quot;orkestry_qdrant&quot;</span><span class="p">]:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container_exists</span><span class="p">(</span><span class="n">container_name</span><span class="p">):</span>
+                    <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">container_name</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">container</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;running&quot;</span><span class="p">:</span>
+                        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stopping container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+                        <span class="n">container</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error stopping container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DockerSetup.remove_all">
+<a class="viewcode-back" href="../../generated/server.docker_setup.html#server.docker_setup.DockerSetup.remove_all">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">remove_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove all Orkestry Docker containers.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stop_all</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">container_name</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;orkestry_postgres&quot;</span><span class="p">,</span> <span class="s2">&quot;orkestry_qdrant&quot;</span><span class="p">]:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_container_exists</span><span class="p">(</span><span class="n">container_name</span><span class="p">):</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Removing container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+                    <span class="n">container</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">containers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">container_name</span><span class="p">)</span>
+                    <span class="n">container</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error removing container &#39;</span><span class="si">{</span><span class="n">container_name</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Nikola Milosevic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
